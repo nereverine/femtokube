@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelNodeName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,20 +49,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBoxNetworkStatus = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelNetworkStatus = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBoxMemoryStatus = new System.Windows.Forms.PictureBox();
-            this.labelMemoryStatus = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBoxDiskStatus = new System.Windows.Forms.PictureBox();
-            this.labelDiskStatus = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBoxPIDStatus = new System.Windows.Forms.PictureBox();
-            this.labelPIDStatus = new System.Windows.Forms.Label();
             this.labelReadyStatus = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxReadyStatus = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelPIDStatus = new System.Windows.Forms.Label();
+            this.pictureBoxPIDStatus = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelDiskStatus = new System.Windows.Forms.Label();
+            this.pictureBoxDiskStatus = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelMemoryStatus = new System.Windows.Forms.Label();
+            this.pictureBoxMemoryStatus = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelNetworkStatus = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,10 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNetworkStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReadyStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIDStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNodeName
@@ -265,8 +267,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBoxNetworkStatus);
             this.groupBox2.Controls.Add(this.labelReadyStatus);
-            this.groupBox2.Controls.Add(this.pictureBox5);
+            this.groupBox2.Controls.Add(this.pictureBoxReadyStatus);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.labelPIDStatus);
             this.groupBox2.Controls.Add(this.pictureBoxPIDStatus);
@@ -279,7 +282,6 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.labelNetworkStatus);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.pictureBoxNetworkStatus);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(434, 12);
             this.groupBox2.Name = "groupBox2";
@@ -290,87 +292,66 @@
             // 
             // pictureBoxNetworkStatus
             // 
-            this.pictureBoxNetworkStatus.Location = new System.Drawing.Point(6, 43);
+            this.pictureBoxNetworkStatus.Image = global::femtokube.Properties.Resources.check;
+            this.pictureBoxNetworkStatus.Location = new System.Drawing.Point(7, 43);
             this.pictureBoxNetworkStatus.Name = "pictureBoxNetworkStatus";
             this.pictureBoxNetworkStatus.Size = new System.Drawing.Size(31, 25);
-            this.pictureBoxNetworkStatus.TabIndex = 0;
+            this.pictureBoxNetworkStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxNetworkStatus.TabIndex = 15;
             this.pictureBoxNetworkStatus.TabStop = false;
+            this.pictureBoxNetworkStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxNetworkStatus_MouseMove);
             // 
-            // label7
+            // labelReadyStatus
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(0, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Network";
+            this.labelReadyStatus.AutoSize = true;
+            this.labelReadyStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelReadyStatus.Location = new System.Drawing.Point(226, 71);
+            this.labelReadyStatus.Name = "labelReadyStatus";
+            this.labelReadyStatus.Size = new System.Drawing.Size(39, 15);
+            this.labelReadyStatus.TabIndex = 14;
+            this.labelReadyStatus.Text = "Ready";
+            this.labelReadyStatus.Visible = false;
             // 
-            // labelNetworkStatus
+            // pictureBoxReadyStatus
             // 
-            this.labelNetworkStatus.AutoSize = true;
-            this.labelNetworkStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNetworkStatus.Location = new System.Drawing.Point(0, 71);
-            this.labelNetworkStatus.Name = "labelNetworkStatus";
-            this.labelNetworkStatus.Size = new System.Drawing.Size(52, 15);
-            this.labelNetworkStatus.TabIndex = 2;
-            this.labelNetworkStatus.Text = "Network";
+            this.pictureBoxReadyStatus.Location = new System.Drawing.Point(229, 43);
+            this.pictureBoxReadyStatus.Name = "pictureBoxReadyStatus";
+            this.pictureBoxReadyStatus.Size = new System.Drawing.Size(31, 25);
+            this.pictureBoxReadyStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxReadyStatus.TabIndex = 13;
+            this.pictureBoxReadyStatus.TabStop = false;
+            this.pictureBoxReadyStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseMove);
             // 
-            // label8
+            // label12
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(63, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 15);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Memory";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(226, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 15);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Ready";
             // 
-            // pictureBoxMemoryStatus
+            // labelPIDStatus
             // 
-            this.pictureBoxMemoryStatus.Location = new System.Drawing.Point(72, 43);
-            this.pictureBoxMemoryStatus.Name = "pictureBoxMemoryStatus";
-            this.pictureBoxMemoryStatus.Size = new System.Drawing.Size(31, 25);
-            this.pictureBoxMemoryStatus.TabIndex = 4;
-            this.pictureBoxMemoryStatus.TabStop = false;
+            this.labelPIDStatus.AutoSize = true;
+            this.labelPIDStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPIDStatus.Location = new System.Drawing.Point(183, 71);
+            this.labelPIDStatus.Name = "labelPIDStatus";
+            this.labelPIDStatus.Size = new System.Drawing.Size(25, 15);
+            this.labelPIDStatus.TabIndex = 11;
+            this.labelPIDStatus.Text = "PID";
+            this.labelPIDStatus.Visible = false;
             // 
-            // labelMemoryStatus
+            // pictureBoxPIDStatus
             // 
-            this.labelMemoryStatus.AutoSize = true;
-            this.labelMemoryStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMemoryStatus.Location = new System.Drawing.Point(63, 71);
-            this.labelMemoryStatus.Name = "labelMemoryStatus";
-            this.labelMemoryStatus.Size = new System.Drawing.Size(52, 15);
-            this.labelMemoryStatus.TabIndex = 5;
-            this.labelMemoryStatus.Text = "Memory";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(131, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 15);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Disk";
-            // 
-            // pictureBoxDiskStatus
-            // 
-            this.pictureBoxDiskStatus.Location = new System.Drawing.Point(131, 43);
-            this.pictureBoxDiskStatus.Name = "pictureBoxDiskStatus";
-            this.pictureBoxDiskStatus.Size = new System.Drawing.Size(31, 25);
-            this.pictureBoxDiskStatus.TabIndex = 7;
-            this.pictureBoxDiskStatus.TabStop = false;
-            // 
-            // labelDiskStatus
-            // 
-            this.labelDiskStatus.AutoSize = true;
-            this.labelDiskStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDiskStatus.Location = new System.Drawing.Point(133, 71);
-            this.labelDiskStatus.Name = "labelDiskStatus";
-            this.labelDiskStatus.Size = new System.Drawing.Size(29, 15);
-            this.labelDiskStatus.TabIndex = 8;
-            this.labelDiskStatus.Text = "Disk";
+            this.pictureBoxPIDStatus.Location = new System.Drawing.Point(181, 43);
+            this.pictureBoxPIDStatus.Name = "pictureBoxPIDStatus";
+            this.pictureBoxPIDStatus.Size = new System.Drawing.Size(31, 25);
+            this.pictureBoxPIDStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxPIDStatus.TabIndex = 10;
+            this.pictureBoxPIDStatus.TabStop = false;
+            this.pictureBoxPIDStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxPIDStatus_MouseMove);
             // 
             // label10
             // 
@@ -382,51 +363,88 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "PID";
             // 
-            // pictureBoxPIDStatus
+            // labelDiskStatus
             // 
-            this.pictureBoxPIDStatus.Location = new System.Drawing.Point(181, 43);
-            this.pictureBoxPIDStatus.Name = "pictureBoxPIDStatus";
-            this.pictureBoxPIDStatus.Size = new System.Drawing.Size(31, 25);
-            this.pictureBoxPIDStatus.TabIndex = 10;
-            this.pictureBoxPIDStatus.TabStop = false;
+            this.labelDiskStatus.AutoSize = true;
+            this.labelDiskStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDiskStatus.Location = new System.Drawing.Point(133, 71);
+            this.labelDiskStatus.Name = "labelDiskStatus";
+            this.labelDiskStatus.Size = new System.Drawing.Size(29, 15);
+            this.labelDiskStatus.TabIndex = 8;
+            this.labelDiskStatus.Text = "Disk";
+            this.labelDiskStatus.Visible = false;
             // 
-            // labelPIDStatus
+            // pictureBoxDiskStatus
             // 
-            this.labelPIDStatus.AutoSize = true;
-            this.labelPIDStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPIDStatus.Location = new System.Drawing.Point(183, 71);
-            this.labelPIDStatus.Name = "labelPIDStatus";
-            this.labelPIDStatus.Size = new System.Drawing.Size(25, 15);
-            this.labelPIDStatus.TabIndex = 11;
-            this.labelPIDStatus.Text = "PID";
+            this.pictureBoxDiskStatus.Location = new System.Drawing.Point(131, 43);
+            this.pictureBoxDiskStatus.Name = "pictureBoxDiskStatus";
+            this.pictureBoxDiskStatus.Size = new System.Drawing.Size(31, 25);
+            this.pictureBoxDiskStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxDiskStatus.TabIndex = 7;
+            this.pictureBoxDiskStatus.TabStop = false;
+            this.pictureBoxDiskStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDiskStatus_MouseMove);
             // 
-            // labelReadyStatus
+            // label9
             // 
-            this.labelReadyStatus.AutoSize = true;
-            this.labelReadyStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelReadyStatus.Location = new System.Drawing.Point(226, 71);
-            this.labelReadyStatus.Name = "labelReadyStatus";
-            this.labelReadyStatus.Size = new System.Drawing.Size(39, 15);
-            this.labelReadyStatus.TabIndex = 14;
-            this.labelReadyStatus.Text = "Ready";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(131, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Disk";
             // 
-            // pictureBox5
+            // labelMemoryStatus
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(229, 43);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(31, 25);
-            this.pictureBox5.TabIndex = 13;
-            this.pictureBox5.TabStop = false;
+            this.labelMemoryStatus.AutoSize = true;
+            this.labelMemoryStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMemoryStatus.Location = new System.Drawing.Point(63, 71);
+            this.labelMemoryStatus.Name = "labelMemoryStatus";
+            this.labelMemoryStatus.Size = new System.Drawing.Size(52, 15);
+            this.labelMemoryStatus.TabIndex = 5;
+            this.labelMemoryStatus.Text = "Memory";
+            this.labelMemoryStatus.Visible = false;
             // 
-            // label12
+            // pictureBoxMemoryStatus
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(226, 25);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 15);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Ready";
+            this.pictureBoxMemoryStatus.Location = new System.Drawing.Point(72, 43);
+            this.pictureBoxMemoryStatus.Name = "pictureBoxMemoryStatus";
+            this.pictureBoxMemoryStatus.Size = new System.Drawing.Size(31, 25);
+            this.pictureBoxMemoryStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxMemoryStatus.TabIndex = 4;
+            this.pictureBoxMemoryStatus.TabStop = false;
+            this.pictureBoxMemoryStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxMemoryStatus_MouseMove);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(63, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 15);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Memory";
+            // 
+            // labelNetworkStatus
+            // 
+            this.labelNetworkStatus.AutoSize = true;
+            this.labelNetworkStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNetworkStatus.Location = new System.Drawing.Point(7, 77);
+            this.labelNetworkStatus.Name = "labelNetworkStatus";
+            this.labelNetworkStatus.Size = new System.Drawing.Size(30, 7);
+            this.labelNetworkStatus.TabIndex = 2;
+            this.labelNetworkStatus.Text = "Network";
+            this.labelNetworkStatus.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(0, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Network";
             // 
             // NodeDetails
             // 
@@ -452,10 +470,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNetworkStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReadyStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIDStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,7 +501,7 @@
         private PictureBox pictureBox1;
         private GroupBox groupBox2;
         private Label labelReadyStatus;
-        private PictureBox pictureBox5;
+        private PictureBox pictureBoxReadyStatus;
         private Label label12;
         private Label labelPIDStatus;
         private PictureBox pictureBoxPIDStatus;
@@ -496,6 +514,7 @@
         private Label label8;
         private Label labelNetworkStatus;
         private Label label7;
+        private ToolTip toolTip1;
         private PictureBox pictureBoxNetworkStatus;
     }
 }

@@ -17,6 +17,7 @@ namespace femtokube
     public partial class NodeDetails : Form
     {
         private String nodeName;
+        List<Conditions> conditions = new List<Conditions>();
         public NodeDetails(String nodeName)
         {
             this.nodeName = nodeName;
@@ -57,7 +58,7 @@ namespace femtokube
             labelPods.Text = convertObj.status.capacity.pods.ToString();
 
             //conditions
-            List<Conditions> conditions = new List<Conditions>();
+            
             foreach (JObject item in convertObj.status.conditions)
             {
                 conditions.Add(item.ToObject<Conditions>());
@@ -67,8 +68,86 @@ namespace femtokube
                 case "False":
                     pictureBoxNetworkStatus.Image = Properties.Resources.check;
                     break;
+
+                default:
+                    pictureBoxNetworkStatus.Image = Properties.Resources.wrong;
+                    break;
+            }
+            labelNetworkStatus.Text = conditions[0].message;
+
+            switch (conditions[1].status)
+            {
+                case "False":
+                    pictureBoxMemoryStatus.Image = Properties.Resources.check;
+                    break;
+
+                default:
+                    pictureBoxMemoryStatus.Image = Properties.Resources.wrong;
+                    break;
+            }
+            labelMemoryStatus.Text = conditions[1].message;
+
+            switch (conditions[2].status)
+            {
+                case "False":
+                    pictureBoxDiskStatus.Image = Properties.Resources.check;
+                    break;
+
+                default:
+                    pictureBoxDiskStatus.Image = Properties.Resources.wrong;
+                    break;
+            }
+            labelDiskStatus.Text = conditions[2].message;
+
+            switch (conditions[3].status)
+            {
+                case "False":
+                    pictureBoxPIDStatus.Image = Properties.Resources.check;
+                    break;
+
+                default:
+                    pictureBoxPIDStatus.Image = Properties.Resources.wrong;
+                    break;
+            }
+            labelPIDStatus.Text = conditions[3].message;
+
+            switch (conditions[4].status)
+            {
+                case "True":
+                    pictureBoxReadyStatus.Image = Properties.Resources.check;
+                    break;
+
+                default:
+                    pictureBoxReadyStatus.Image = Properties.Resources.wrong;
+                    break;
             }
 
+            labelReadyStatus.Text = conditions[4].message;
+        }
+
+        private void pictureBoxNetworkStatus_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBoxNetworkStatus, conditions[0].message);
+        }
+
+        private void pictureBoxMemoryStatus_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBoxMemoryStatus, conditions[1].message);
+        }
+
+        private void pictureBoxDiskStatus_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBoxDiskStatus, conditions[2].message);
+        }
+
+        private void pictureBoxPIDStatus_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBoxPIDStatus, conditions[3].message);
+        }
+
+        private void pictureBox5_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBoxReadyStatus, conditions[4].message);
         }
     }
 }
