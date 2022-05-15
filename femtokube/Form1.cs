@@ -1,10 +1,21 @@
 namespace femtokube
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
-        public Form1()
+        public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNodes_Click(object sender, EventArgs e)
+        {
+            var nodes = new Nodes();
+            nodes.Show();
         }
     }
 }
