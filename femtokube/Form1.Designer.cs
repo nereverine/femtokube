@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonNodes = new System.Windows.Forms.Button();
+            this.buttonNamespaces = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonNamespaces);
             this.groupBox1.Controls.Add(this.buttonNodes);
             this.groupBox1.Location = new System.Drawing.Point(12, 338);
             this.groupBox1.Name = "groupBox1";
@@ -64,6 +66,17 @@
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.UseVisualStyleBackColor = true;
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
+            // 
+            // buttonNamespaces
+            // 
+            this.buttonNamespaces.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonNamespaces.Location = new System.Drawing.Point(143, 31);
+            this.buttonNamespaces.Name = "buttonNamespaces";
+            this.buttonNamespaces.Size = new System.Drawing.Size(121, 50);
+            this.buttonNamespaces.TabIndex = 1;
+            this.buttonNamespaces.Text = "Namespaces";
+            this.buttonNamespaces.UseVisualStyleBackColor = true;
+            this.buttonNamespaces.Click += new System.EventHandler(this.buttonNamespaces_Click);
             // 
             // Dashboard
             // 
@@ -87,5 +100,6 @@
         private Label label1;
         private GroupBox groupBox1;
         private Button buttonNodes;
+        private Button buttonNamespaces;
     }
 }

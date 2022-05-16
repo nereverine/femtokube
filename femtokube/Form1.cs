@@ -17,5 +17,11 @@ namespace femtokube
             var nodes = new Nodes();
             nodes.Show();
         }
+
+        private void buttonNamespaces_Click(object sender, EventArgs e)
+        {
+            var namespaces = new Namespaces();
+            namespaces.Show();
+        }
     }
 }
