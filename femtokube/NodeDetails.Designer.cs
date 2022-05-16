@@ -64,6 +64,20 @@
             this.labelNetworkStatus = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelHostname = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.labelKernelVersion = new System.Windows.Forms.Label();
+            this.labelOSImage = new System.Windows.Forms.Label();
+            this.labelOS = new System.Windows.Forms.Label();
+            this.labelArch = new System.Windows.Forms.Label();
+            this.listBoxImages = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -75,13 +89,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIDStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNodeName
             // 
             this.labelNodeName.AutoSize = true;
             this.labelNodeName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNodeName.Location = new System.Drawing.Point(286, 9);
+            this.labelNodeName.Location = new System.Drawing.Point(237, 9);
             this.labelNodeName.Name = "labelNodeName";
             this.labelNodeName.Size = new System.Drawing.Size(87, 32);
             this.labelNodeName.TabIndex = 2;
@@ -90,6 +105,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 15);
@@ -99,9 +115,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(68, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Created at:";
             // 
@@ -138,7 +155,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(14, 160);
+            this.groupBox1.Location = new System.Drawing.Point(14, 179);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(130, 226);
             this.groupBox1.TabIndex = 8;
@@ -283,7 +300,7 @@
             this.groupBox2.Controls.Add(this.labelNetworkStatus);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(434, 12);
+            this.groupBox2.Location = new System.Drawing.Point(282, 314);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(273, 91);
             this.groupBox2.TabIndex = 9;
@@ -446,11 +463,159 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Network";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(15, 114);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Hostname:";
+            // 
+            // labelHostname
+            // 
+            this.labelHostname.AutoSize = true;
+            this.labelHostname.Location = new System.Drawing.Point(86, 114);
+            this.labelHostname.Name = "labelHostname";
+            this.labelHostname.Size = new System.Drawing.Size(44, 15);
+            this.labelHostname.TabIndex = 11;
+            this.labelHostname.Text = "label13";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(14, 142);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 15);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Address:";
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(86, 142);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(44, 15);
+            this.labelAddress.TabIndex = 13;
+            this.labelAddress.Text = "label14";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(364, 88);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 15);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "OS Image:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(364, 114);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 15);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Operating System:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(364, 142);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 15);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Architecture:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(364, 61);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(91, 15);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Kernel Version:";
+            // 
+            // labelKernelVersion
+            // 
+            this.labelKernelVersion.AutoSize = true;
+            this.labelKernelVersion.Location = new System.Drawing.Point(461, 61);
+            this.labelKernelVersion.Name = "labelKernelVersion";
+            this.labelKernelVersion.Size = new System.Drawing.Size(44, 15);
+            this.labelKernelVersion.TabIndex = 18;
+            this.labelKernelVersion.Text = "label18";
+            // 
+            // labelOSImage
+            // 
+            this.labelOSImage.AutoSize = true;
+            this.labelOSImage.Location = new System.Drawing.Point(430, 88);
+            this.labelOSImage.Name = "labelOSImage";
+            this.labelOSImage.Size = new System.Drawing.Size(44, 15);
+            this.labelOSImage.TabIndex = 19;
+            this.labelOSImage.Text = "label18";
+            // 
+            // labelOS
+            // 
+            this.labelOS.AutoSize = true;
+            this.labelOS.Location = new System.Drawing.Point(480, 114);
+            this.labelOS.Name = "labelOS";
+            this.labelOS.Size = new System.Drawing.Size(44, 15);
+            this.labelOS.TabIndex = 20;
+            this.labelOS.Text = "label18";
+            // 
+            // labelArch
+            // 
+            this.labelArch.AutoSize = true;
+            this.labelArch.Location = new System.Drawing.Point(446, 142);
+            this.labelArch.Name = "labelArch";
+            this.labelArch.Size = new System.Drawing.Size(44, 15);
+            this.labelArch.TabIndex = 21;
+            this.labelArch.Text = "label18";
+            // 
+            // listBoxImages
+            // 
+            this.listBoxImages.FormattingEnabled = true;
+            this.listBoxImages.ItemHeight = 15;
+            this.listBoxImages.Location = new System.Drawing.Point(6, 15);
+            this.listBoxImages.Name = "listBoxImages";
+            this.listBoxImages.Size = new System.Drawing.Size(261, 79);
+            this.listBoxImages.TabIndex = 22;
+            this.listBoxImages.SelectedIndexChanged += new System.EventHandler(this.listBoxImages_SelectedIndexChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBoxImages);
+            this.groupBox3.Location = new System.Drawing.Point(282, 184);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(273, 100);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Images";
+            // 
             // NodeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 447);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(567, 410);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.labelArch);
+            this.Controls.Add(this.labelOS);
+            this.Controls.Add(this.labelOSImage);
+            this.Controls.Add(this.labelKernelVersion);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.labelAddress);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.labelHostname);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labeluid);
@@ -474,6 +639,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIDStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiskStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemoryStatus)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,5 +682,19 @@
         private Label label7;
         private ToolTip toolTip1;
         private PictureBox pictureBoxNetworkStatus;
+        private Label label11;
+        private Label labelHostname;
+        private Label label13;
+        private Label labelAddress;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label labelKernelVersion;
+        private Label labelOSImage;
+        private Label labelOS;
+        private Label labelArch;
+        private ListBox listBoxImages;
+        private GroupBox groupBox3;
     }
 }

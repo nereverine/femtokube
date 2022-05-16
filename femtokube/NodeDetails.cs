@@ -18,6 +18,8 @@ namespace femtokube
     {
         private String nodeName;
         List<Conditions> conditions = new List<Conditions>();
+        List<Addresses> addresses = new List<Addresses>();
+        List<Images> images = new List<Images>();
         public NodeDetails(String nodeName)
         {
             this.nodeName = nodeName;
@@ -123,6 +125,38 @@ namespace femtokube
             }
 
             labelReadyStatus.Text = conditions[4].message;
+
+            //addresses
+            foreach (JObject item in convertObj.status.addresses)
+            {
+                addresses.Add(item.ToObject<Addresses>());
+            }
+            foreach (var item in addresses)
+            {
+                if (item.type == "Hostname")
+                {
+                    labelHostname.Text = item.address;
+                }
+                if (item.type == "InternalIP")
+                {
+                    labelAddress.Text = item.address;
+                }
+            }
+
+            labelKernelVersion.Text = convertObj.status.nodeInfo.kernelVersion;
+            labelOS.Text = convertObj.status.nodeInfo.operatingSystem;
+            labelOSImage.Text = convertObj.status.nodeInfo.osImage;
+            labelArch.Text = convertObj.status.nodeInfo.architecture;
+
+            //images
+            foreach (var item in convertObj.status.images)
+            {
+                images.Add(item.ToObject<Images>());
+            }
+            foreach (var image in images)
+            {
+                listBoxImages.Items.Add(image.names[1] +"  Tamanho: " + image.sizeBytes * 0.000001+"MB");
+            }
         }
 
         private void pictureBoxNetworkStatus_MouseMove(object sender, MouseEventArgs e)
@@ -149,6 +183,11 @@ namespace femtokube
         {
             toolTip1.SetToolTip(pictureBoxReadyStatus, conditions[4].message);
         }
+
+        private void listBoxImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBoxImages.SelectedItem.ToString());
+        }
     }
 }
 
@@ -161,4 +200,14 @@ public class Conditions
     public String lastTransitionTime;
     public String reason;
     public String message;
+}
+public class Addresses
+{
+    public String type;
+    public String address;
+}
+public class Images
+{
+    public String[] names;
+    public int sizeBytes;
 }
