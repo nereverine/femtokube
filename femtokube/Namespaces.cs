@@ -63,8 +63,26 @@ namespace femtokube
             }
             else
             {
-                var namespaceDetails = new NamespaceDetails(listBoxNamespaces.SelectedItem.ToString());
-                namespaceDetails.Show();
+                deleteNamespace();
+            }
+        }
+
+        private void deleteNamespace()
+        {
+            var progressBarForm = new ProgressBarForm();
+            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem;
+            WebRequest request = WebRequest.Create(address);
+            request.Method = "DELETE";
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the namespace: " + listBoxNamespaces.SelectedItem , "Delete Namespace", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                progressBarForm.Show();
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
             }
         }
     }

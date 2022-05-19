@@ -101,6 +101,7 @@
             this.Controls.Add(this.listBoxNamespaces);
             this.Controls.Add(this.label1);
             this.Name = "Namespaces";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Namespaces";
             this.Load += new System.EventHandler(this.Namespaces_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
