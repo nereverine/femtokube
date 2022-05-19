@@ -23,5 +23,11 @@ namespace femtokube
             var namespaces = new Namespaces();
             namespaces.Show();
         }
+
+        private void buttonPods_Click(object sender, EventArgs e)
+        {
+            var pods = new Pods();
+            pods.Show();
+        }
     }
 }

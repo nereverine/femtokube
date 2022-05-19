@@ -29,7 +29,8 @@ namespace femtokube
             {
                 var response = myWebClient.UploadString(address, json);
                 dynamic convertObj = JObject.Parse(response);
-                MessageBox.Show("Namespace " + textBoxName.Text + "created successfully!");
+                MessageBox.Show("Namespace " + textBoxName.Text + " created successfully!");
+                this.Close();
             }
             catch (Exception)
             {

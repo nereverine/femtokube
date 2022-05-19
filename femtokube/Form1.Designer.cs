@@ -30,8 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonNodes = new System.Windows.Forms.Button();
+            this.buttonPods = new System.Windows.Forms.Button();
             this.buttonNamespaces = new System.Windows.Forms.Button();
+            this.buttonNodes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonPods);
             this.groupBox1.Controls.Add(this.buttonNamespaces);
             this.groupBox1.Controls.Add(this.buttonNodes);
             this.groupBox1.Location = new System.Drawing.Point(12, 338);
@@ -56,16 +58,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // buttonNodes
+            // buttonPods
             // 
-            this.buttonNodes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonNodes.Location = new System.Drawing.Point(31, 31);
-            this.buttonNodes.Name = "buttonNodes";
-            this.buttonNodes.Size = new System.Drawing.Size(76, 50);
-            this.buttonNodes.TabIndex = 0;
-            this.buttonNodes.Text = "Nodes";
-            this.buttonNodes.UseVisualStyleBackColor = true;
-            this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
+            this.buttonPods.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPods.Location = new System.Drawing.Point(330, 31);
+            this.buttonPods.Name = "buttonPods";
+            this.buttonPods.Size = new System.Drawing.Size(76, 50);
+            this.buttonPods.TabIndex = 2;
+            this.buttonPods.Text = "Pods";
+            this.buttonPods.UseVisualStyleBackColor = true;
+            this.buttonPods.Click += new System.EventHandler(this.buttonPods_Click);
             // 
             // buttonNamespaces
             // 
@@ -77,6 +79,17 @@
             this.buttonNamespaces.Text = "Namespaces";
             this.buttonNamespaces.UseVisualStyleBackColor = true;
             this.buttonNamespaces.Click += new System.EventHandler(this.buttonNamespaces_Click);
+            // 
+            // buttonNodes
+            // 
+            this.buttonNodes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonNodes.Location = new System.Drawing.Point(31, 31);
+            this.buttonNodes.Name = "buttonNodes";
+            this.buttonNodes.Size = new System.Drawing.Size(76, 50);
+            this.buttonNodes.TabIndex = 0;
+            this.buttonNodes.Text = "Nodes";
+            this.buttonNodes.UseVisualStyleBackColor = true;
+            this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
             // 
             // Dashboard
             // 
@@ -101,5 +114,6 @@
         private GroupBox groupBox1;
         private Button buttonNodes;
         private Button buttonNamespaces;
+        private Button buttonPods;
     }
 }

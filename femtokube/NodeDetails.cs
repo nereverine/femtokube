@@ -188,6 +188,11 @@ namespace femtokube
         {
             MessageBox.Show(listBoxImages.SelectedItem.ToString());
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
