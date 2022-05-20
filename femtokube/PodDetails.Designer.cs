@@ -34,10 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelPodsText = new System.Windows.Forms.Label();
-            this.labelContainersText = new System.Windows.Forms.Label();
-            this.labelReadyText = new System.Windows.Forms.Label();
-            this.labelInitializedText = new System.Windows.Forms.Label();
             this.pictureBoxInitialized = new System.Windows.Forms.PictureBox();
             this.pictureBoxPod = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -52,19 +48,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelHostIP = new System.Windows.Forms.Label();
             this.labelPodIP = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBoxContainers = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInitialized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContainers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReady)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPodName
             // 
             this.labelPodName.AutoSize = true;
             this.labelPodName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPodName.Location = new System.Drawing.Point(117, 9);
+            this.labelPodName.Location = new System.Drawing.Point(84, 9);
             this.labelPodName.Name = "labelPodName";
             this.labelPodName.Size = new System.Drawing.Size(157, 32);
             this.labelPodName.TabIndex = 5;
@@ -110,10 +109,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.labelPodsText);
-            this.groupBox2.Controls.Add(this.labelContainersText);
-            this.groupBox2.Controls.Add(this.labelReadyText);
-            this.groupBox2.Controls.Add(this.labelInitializedText);
             this.groupBox2.Controls.Add(this.pictureBoxInitialized);
             this.groupBox2.Controls.Add(this.pictureBoxPod);
             this.groupBox2.Controls.Add(this.label12);
@@ -129,46 +124,6 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Conditions";
-            // 
-            // labelPodsText
-            // 
-            this.labelPodsText.AutoSize = true;
-            this.labelPodsText.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPodsText.Location = new System.Drawing.Point(301, 70);
-            this.labelPodsText.Name = "labelPodsText";
-            this.labelPodsText.Size = new System.Drawing.Size(29, 12);
-            this.labelPodsText.TabIndex = 19;
-            this.labelPodsText.Text = "label3";
-            // 
-            // labelContainersText
-            // 
-            this.labelContainersText.AutoSize = true;
-            this.labelContainersText.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelContainersText.Location = new System.Drawing.Point(181, 70);
-            this.labelContainersText.Name = "labelContainersText";
-            this.labelContainersText.Size = new System.Drawing.Size(29, 12);
-            this.labelContainersText.TabIndex = 18;
-            this.labelContainersText.Text = "label3";
-            // 
-            // labelReadyText
-            // 
-            this.labelReadyText.AutoSize = true;
-            this.labelReadyText.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelReadyText.Location = new System.Drawing.Point(92, 70);
-            this.labelReadyText.Name = "labelReadyText";
-            this.labelReadyText.Size = new System.Drawing.Size(29, 12);
-            this.labelReadyText.TabIndex = 17;
-            this.labelReadyText.Text = "label3";
-            // 
-            // labelInitializedText
-            // 
-            this.labelInitializedText.AutoSize = true;
-            this.labelInitializedText.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelInitializedText.Location = new System.Drawing.Point(23, 70);
-            this.labelInitializedText.Name = "labelInitializedText";
-            this.labelInitializedText.Size = new System.Drawing.Size(29, 12);
-            this.labelInitializedText.TabIndex = 16;
-            this.labelInitializedText.Text = "label3";
             // 
             // pictureBoxInitialized
             // 
@@ -304,12 +259,32 @@
             this.labelPodIP.TabIndex = 17;
             this.labelPodIP.Text = "label6";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBoxContainers);
+            this.groupBox3.Location = new System.Drawing.Point(14, 192);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 100);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Containers";
+            // 
+            // listBoxContainers
+            // 
+            this.listBoxContainers.FormattingEnabled = true;
+            this.listBoxContainers.ItemHeight = 15;
+            this.listBoxContainers.Location = new System.Drawing.Point(8, 15);
+            this.listBoxContainers.Name = "listBoxContainers";
+            this.listBoxContainers.Size = new System.Drawing.Size(186, 79);
+            this.listBoxContainers.TabIndex = 0;
+            // 
             // PodDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(402, 410);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.labelPodIP);
             this.Controls.Add(this.labelHostIP);
             this.Controls.Add(this.label4);
@@ -332,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContainers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReady)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,15 +329,13 @@
         private PictureBox pictureBoxReady;
         private Label label9;
         private Label label7;
-        private Label labelPodsText;
-        private Label labelContainersText;
-        private Label labelReadyText;
-        private Label labelInitializedText;
         private GroupBox groupBox1;
         private ListBox listBoxIPs;
         private Label label3;
         private Label label4;
         private Label labelHostIP;
         private Label labelPodIP;
+        private GroupBox groupBox3;
+        private ListBox listBoxContainers;
     }
 }

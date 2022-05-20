@@ -17,6 +17,7 @@ namespace femtokube
         private String namespaceName;
         private String podName;
         List<Conditions> conditions = new List<Conditions>();
+        List<Containers> containers = new List<Containers>();
         public PodDetails(String namespaceName, String podName)
         {
             InitializeComponent();
@@ -99,6 +100,22 @@ namespace femtokube
             {
                 listBoxIPs.Items.Add(ip.ip);
             }
+
+            //containers
+            foreach (JObject container in convertObj.spec.containers)
+            {
+                containers.Add(container.ToObject<Containers>());
+            }
+            foreach (var item in containers)
+            {
+                listBoxContainers.Items.Add(item.name);
+            }
         }
     }
+}
+
+public class Containers
+{
+    public String name;
+    public String image;
 }

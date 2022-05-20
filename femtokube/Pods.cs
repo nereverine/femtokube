@@ -67,9 +67,16 @@ namespace femtokube
             }
             else
             {
-                var podAdd = new PodDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxPods.SelectedItem.ToString());
-                podAdd.Show();
+                var podDetails = new PodDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxPods.SelectedItem.ToString());
+                podDetails.Show();
             }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            var podAdd = new PodAdd(listBoxNamespaces.SelectedItem.ToString());
+            podAdd.Show();
+            
         }
     }
 }
