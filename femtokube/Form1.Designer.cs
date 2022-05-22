@@ -33,6 +33,7 @@
             this.buttonPods = new System.Windows.Forms.Button();
             this.buttonNamespaces = new System.Windows.Forms.Button();
             this.buttonNodes = new System.Windows.Forms.Button();
+            this.buttonDeployments = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonDeployments);
             this.groupBox1.Controls.Add(this.buttonPods);
             this.groupBox1.Controls.Add(this.buttonNamespaces);
             this.groupBox1.Controls.Add(this.buttonNodes);
@@ -91,6 +93,17 @@
             this.buttonNodes.UseVisualStyleBackColor = true;
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
             // 
+            // buttonDeployments
+            // 
+            this.buttonDeployments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonDeployments.Location = new System.Drawing.Point(441, 31);
+            this.buttonDeployments.Name = "buttonDeployments";
+            this.buttonDeployments.Size = new System.Drawing.Size(120, 50);
+            this.buttonDeployments.TabIndex = 3;
+            this.buttonDeployments.Text = "Deployments";
+            this.buttonDeployments.UseVisualStyleBackColor = true;
+            this.buttonDeployments.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -115,5 +128,6 @@
         private Button buttonNodes;
         private Button buttonNamespaces;
         private Button buttonPods;
+        private Button buttonDeployments;
     }
 }

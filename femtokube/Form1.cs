@@ -29,5 +29,11 @@ namespace femtokube
             var pods = new Pods();
             pods.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var deployments = new Deployments();
+            deployments.Show();
+        }
     }
 }

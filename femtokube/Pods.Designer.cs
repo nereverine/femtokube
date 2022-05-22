@@ -58,6 +58,7 @@
             this.label2.Size = new System.Drawing.Size(195, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Select a namespace to view its pods";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // listBoxNamespaces
             // 
@@ -118,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 359);
+            this.ClientSize = new System.Drawing.Size(307, 368);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
