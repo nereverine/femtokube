@@ -38,17 +38,26 @@ namespace femtokube
 
         private void listBoxNamespaces_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Size = new Size(323, 400);
-            listBoxPods.Items.Clear();
-            getPodsByNamespaceName();
-            pictureBox1.Visible = true;
-            pictureBox2.Visible = true;
-            pictureBox3.Visible = true;
+            
+            if (listBoxNamespaces.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                Size = new Size(323, 400);
+                listBoxPods.Items.Clear();
+                getPodsByNamespaceName();
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = true;
+                pictureBox3.Visible = true;
+            }
 
         }
 
         private void getPodsByNamespaceName()
         {
+            listBoxPods.Items.Clear();
             String url = "http://192.168.50.128:8001/api/v1/namespaces/" + this.listBoxNamespaces.SelectedItem + "/pods";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
@@ -77,6 +86,32 @@ namespace femtokube
             var podAdd = new PodAdd(listBoxNamespaces.SelectedItem.ToString());
             podAdd.Show();
             
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if(listBoxPods.SelectedItem == null)
+            {
+                MessageBox.Show("Select a Pod to delete first");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/pods/" + listBoxPods.SelectedItem;
+                    WebRequest request = WebRequest.Create(address);
+                    request.Method = "DELETE";
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    MessageBox.Show("Pod deleted successfully");
+                    getPodsByNamespaceName();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    
+                }
+            }
         }
     }
 }

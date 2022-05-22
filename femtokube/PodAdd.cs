@@ -31,20 +31,62 @@ namespace femtokube
 
         private void pictureBoxAdd_Click(object sender, EventArgs e)
         {
-            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/pods";
-            var myWebClient = new WebClient();
-            String json = "{\"kind\":\"Pod\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":" + "\"" + textBoxName.Text + "\"},{\"spec\":{ \"containers\": {\"name\": \"nginx\", \"image\": \"docker.io/nginx:latest\" }} } }";
+            if (listBoxImages.SelectedItem == null)
+            {
+                MessageBox.Show("Select an image for the container first");
+                return;
+            }
+            else
+            {
 
-            //try
-            //{
-                var response = myWebClient.UploadString(address, json);
+
+
+                String address = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/pods";
+                var myWebClient = new WebClient();
+                String imageName = "";
+                MessageBox.Show(listBoxImages.SelectedIndex.ToString());
+                switch (listBoxImages.SelectedIndex)
+                {
+                    case 0:
+                            imageName = "docker.io/ubuntu:latest";
+                        break;
+                    case 1:
+                        imageName = "docker.io/redis:latest";
+                        break;
+
+                    case 2:
+                        imageName = "docker.io/alpine:latest";
+                        break;
+                    case 3:
+                        imageName = "docker.io/node:latest";
+                        break;
+                    case 4:
+                        imageName = "docker.io/mysql:latest";
+                        break;
+                    case 5:
+                        imageName = "docker.io/python:latest";
+                        break;
+                    case 6:
+                        imageName = "docker.io/nginx:latest";
+                        break;
+                }
+
+
+                String json = "{\"kind\":\"Pod\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":"  + "\"" + textBoxName.Text + "\"},\"spec\":{\"containers\":[{\"name\":" + "\""+ textBoxName.Text+ "\"" +",\"image\":" + "\"" + imageName + "\"}]}}";
+
+                try
+                {
+                    var response = myWebClient.UploadString(address, json);
                 dynamic convertObj = JObject.Parse(response);
-                MessageBox.Show(convertObj.ToString());
-            //}
-            //catch (Exception)
-            //{
-              //  MessageBox.Show(Exception);
-            //}
+                MessageBox.Show("Pod: "+textBoxName.Text + " created successfully");
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Pod wasnt created successfully");
+                    this.Close();
+                }
+            }
         }
     }
 }

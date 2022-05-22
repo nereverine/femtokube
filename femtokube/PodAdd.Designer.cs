@@ -73,6 +73,12 @@
             this.listBoxImages.FormattingEnabled = true;
             this.listBoxImages.ItemHeight = 15;
             this.listBoxImages.Items.AddRange(new object[] {
+            "ubuntu",
+            "redis",
+            "alpine",
+            "node",
+            "mysql",
+            "python",
             "nginx"});
             this.listBoxImages.Location = new System.Drawing.Point(6, 22);
             this.listBoxImages.Name = "listBoxImages";
