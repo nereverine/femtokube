@@ -80,5 +80,37 @@ namespace femtokube
                 MessageBox.Show("Select a deployment to view first");
             }
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            var deploymentAdd = new DeploymentAdd(listBoxNamespaces.SelectedItem.ToString());
+            deploymentAdd.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (listBoxDeployments.SelectedItem == null)
+            {
+                MessageBox.Show("Select a Namespace to delete first");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    String address = "http://192.168.50.128:8001/apis/apps/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/deployments/" + listBoxDeployments.SelectedItem;
+                    WebRequest request = WebRequest.Create(address);
+                    request.Method = "DELETE";
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    MessageBox.Show("Pod deleted successfully");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+            }
+        }
     }
 }
