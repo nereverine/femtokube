@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.labelNamespace = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
@@ -105,6 +106,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.numericUpDownPort);
             this.groupBox1.Controls.Add(this.label4);
@@ -121,7 +123,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 116);
+            this.label6.Location = new System.Drawing.Point(8, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 15);
             this.label6.TabIndex = 5;
@@ -129,7 +131,7 @@
             // 
             // numericUpDownPort
             // 
-            this.numericUpDownPort.Location = new System.Drawing.Point(56, 114);
+            this.numericUpDownPort.Location = new System.Drawing.Point(56, 116);
             this.numericUpDownPort.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -160,7 +162,7 @@
             // 
             // textBoxContainerName
             // 
-            this.textBoxContainerName.Location = new System.Drawing.Point(56, 26);
+            this.textBoxContainerName.Location = new System.Drawing.Point(56, 33);
             this.textBoxContainerName.Name = "textBoxContainerName";
             this.textBoxContainerName.Size = new System.Drawing.Size(100, 23);
             this.textBoxContainerName.TabIndex = 2;
@@ -168,7 +170,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 29);
+            this.label3.Location = new System.Drawing.Point(8, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 1;
@@ -186,7 +188,7 @@
             "mysql",
             "python",
             "nginx"});
-            this.listBoxImages.Location = new System.Drawing.Point(68, 59);
+            this.listBoxImages.Location = new System.Drawing.Point(68, 61);
             this.listBoxImages.Name = "listBoxImages";
             this.listBoxImages.Size = new System.Drawing.Size(109, 49);
             this.listBoxImages.TabIndex = 0;
@@ -219,6 +221,16 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(56, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 12);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "This also defines the label";
             // 
             // DeploymentAdd
             // 
@@ -265,5 +277,6 @@
         private PictureBox pictureBox1;
         private Label label6;
         private NumericUpDown numericUpDownPort;
+        private Label label7;
     }
 }

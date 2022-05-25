@@ -79,5 +79,11 @@ namespace femtokube
                 serviceDetails.Show();
             }
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            var serviceAdd = new ServiceAdd(listBoxNamespaces.SelectedItem.ToString());
+            serviceAdd.Show();
+        }
     }
 }
