@@ -35,5 +35,11 @@ namespace femtokube
             var deployments = new Deployments();
             deployments.Show();
         }
+
+        private void buttonServices_Click(object sender, EventArgs e)
+        {
+            var services = new Services();
+            services.Show();
+        }
     }
 }

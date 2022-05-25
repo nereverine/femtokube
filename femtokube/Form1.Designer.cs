@@ -30,10 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonServices = new System.Windows.Forms.Button();
+            this.buttonDeployments = new System.Windows.Forms.Button();
             this.buttonPods = new System.Windows.Forms.Button();
             this.buttonNamespaces = new System.Windows.Forms.Button();
             this.buttonNodes = new System.Windows.Forms.Button();
-            this.buttonDeployments = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonServices);
             this.groupBox1.Controls.Add(this.buttonDeployments);
             this.groupBox1.Controls.Add(this.buttonPods);
             this.groupBox1.Controls.Add(this.buttonNamespaces);
@@ -60,10 +62,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // buttonServices
+            // 
+            this.buttonServices.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonServices.Location = new System.Drawing.Point(658, 33);
+            this.buttonServices.Name = "buttonServices";
+            this.buttonServices.Size = new System.Drawing.Size(83, 47);
+            this.buttonServices.TabIndex = 4;
+            this.buttonServices.Text = "Services";
+            this.buttonServices.UseVisualStyleBackColor = true;
+            this.buttonServices.Click += new System.EventHandler(this.buttonServices_Click);
+            // 
+            // buttonDeployments
+            // 
+            this.buttonDeployments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonDeployments.Location = new System.Drawing.Point(488, 33);
+            this.buttonDeployments.Name = "buttonDeployments";
+            this.buttonDeployments.Size = new System.Drawing.Size(120, 50);
+            this.buttonDeployments.TabIndex = 3;
+            this.buttonDeployments.Text = "Deployments";
+            this.buttonDeployments.UseVisualStyleBackColor = true;
+            this.buttonDeployments.Click += new System.EventHandler(this.button1_Click);
+            // 
             // buttonPods
             // 
             this.buttonPods.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonPods.Location = new System.Drawing.Point(330, 31);
+            this.buttonPods.Location = new System.Drawing.Point(355, 31);
             this.buttonPods.Name = "buttonPods";
             this.buttonPods.Size = new System.Drawing.Size(76, 50);
             this.buttonPods.TabIndex = 2;
@@ -74,7 +98,7 @@
             // buttonNamespaces
             // 
             this.buttonNamespaces.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonNamespaces.Location = new System.Drawing.Point(143, 31);
+            this.buttonNamespaces.Location = new System.Drawing.Point(168, 31);
             this.buttonNamespaces.Name = "buttonNamespaces";
             this.buttonNamespaces.Size = new System.Drawing.Size(121, 50);
             this.buttonNamespaces.TabIndex = 1;
@@ -92,17 +116,6 @@
             this.buttonNodes.Text = "Nodes";
             this.buttonNodes.UseVisualStyleBackColor = true;
             this.buttonNodes.Click += new System.EventHandler(this.buttonNodes_Click);
-            // 
-            // buttonDeployments
-            // 
-            this.buttonDeployments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonDeployments.Location = new System.Drawing.Point(441, 31);
-            this.buttonDeployments.Name = "buttonDeployments";
-            this.buttonDeployments.Size = new System.Drawing.Size(120, 50);
-            this.buttonDeployments.TabIndex = 3;
-            this.buttonDeployments.Text = "Deployments";
-            this.buttonDeployments.UseVisualStyleBackColor = true;
-            this.buttonDeployments.Click += new System.EventHandler(this.button1_Click);
             // 
             // Dashboard
             // 
@@ -129,5 +142,6 @@
         private Button buttonNamespaces;
         private Button buttonPods;
         private Button buttonDeployments;
+        private Button buttonServices;
     }
 }

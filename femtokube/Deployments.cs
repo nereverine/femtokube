@@ -96,19 +96,23 @@ namespace femtokube
             }
             else
             {
-                try
+                DialogResult dialogResult = MessageBox.Show("Are you sure?", "Delete Deployment", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    String address = "http://192.168.50.128:8001/apis/apps/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/deployments/" + listBoxDeployments.SelectedItem;
-                    WebRequest request = WebRequest.Create(address);
-                    request.Method = "DELETE";
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                    MessageBox.Show("Pod deleted successfully");
+                    try
+                    {
+                        String address = "http://192.168.50.128:8001/apis/apps/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/deployments/" + listBoxDeployments.SelectedItem;
+                        WebRequest request = WebRequest.Create(address);
+                        request.Method = "DELETE";
+                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        MessageBox.Show("Pod deleted successfully");
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
 
+                    }
                 }
             }
         }
