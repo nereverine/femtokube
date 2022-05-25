@@ -85,5 +85,36 @@ namespace femtokube
             var serviceAdd = new ServiceAdd(listBoxNamespaces.SelectedItem.ToString());
             serviceAdd.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if(listBoxServices.SelectedItem == null)
+            {
+                MessageBox.Show("Select a service to delete");
+            }
+            else
+            {
+                deleteService();
+            }
+        }
+
+        private void deleteService()
+        {
+            var progressBarForm = new ProgressBarForm();
+            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/services/" + listBoxServices.SelectedItem;
+            WebRequest request = WebRequest.Create(address);
+            request.Method = "DELETE";
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the service: " + listBoxServices.SelectedItem, "Delete Service", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                progressBarForm.Show();
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
     }
 }

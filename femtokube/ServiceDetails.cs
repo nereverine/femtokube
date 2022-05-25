@@ -48,7 +48,14 @@ namespace femtokube
             //ports
             foreach (var item in convertObj.spec.ports)
             {
-                labelPortName.Text = item.name;
+                if (item.name == null)
+                {
+                    labelPortName.Text = "No name";
+                }
+                else
+                {
+                    labelPortName.Text = item.name;
+                }
                 labelProtocol.Text = item.protocol;
                 labelPort.Text = item.port;
                 labelTargetedPort.Text = item.targetPort;
