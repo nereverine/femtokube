@@ -17,8 +17,8 @@ namespace femtokube
 
         private void getUsages()
         {
-            //try
-            //{
+            try
+            {
                 int counter = 0;
                 String url = "http://192.168.50.128:8001/apis/metrics.k8s.io/v1beta1/nodes/";
                 var myWebClient = new WebClient();
@@ -53,14 +53,14 @@ namespace femtokube
                         labelMemory3.Text = memoryUsage(item.usage.memory.ToString());
                     }
                 }
-            //}
-            //catch (Exception e)
-            //{
+            }
+            catch (Exception e)
+            {
 
-            //    MessageBox.Show(e.ToString());
-            //}
-                
-            
+                labelError.Visible = true;
+            }
+
+
 
         }
 

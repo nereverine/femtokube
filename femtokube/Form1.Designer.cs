@@ -50,6 +50,8 @@
             this.labelCPU3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -60,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(305, 9);
+            this.label1.Location = new System.Drawing.Point(320, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 32);
             this.label1.TabIndex = 0;
@@ -194,7 +196,7 @@
             this.groupBox3.Controls.Add(this.labelCPU2);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(284, 96);
+            this.groupBox3.Location = new System.Drawing.Point(298, 96);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 4;
@@ -296,11 +298,33 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "CPU Usage:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(285, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(223, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Metrics for the first 3 nodes of the cluster";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelError.Location = new System.Drawing.Point(285, 128);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(234, 30);
+            this.labelError.TabIndex = 6;
+            this.labelError.Text = "Couldnt retrieve metrics";
+            this.labelError.Visible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 342);
+            this.Controls.Add(this.labelError);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -346,5 +370,7 @@
         private Label labelCPU3;
         private Label label10;
         private Label label11;
+        private Label label4;
+        private Label labelError;
     }
 }
