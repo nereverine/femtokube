@@ -184,7 +184,7 @@
             this.Controls.Add(this.labelDeploymentName);
             this.Name = "DeploymentDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeploymentDetails";
+            this.Text = "Deployment Details";
             this.Load += new System.EventHandler(this.DeploymentDetails_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -96,7 +96,7 @@
             this.Controls.Add(this.labelNamespaceName);
             this.Name = "NamespaceAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NamespaceAdd";
+            this.Text = "Create Namespace";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

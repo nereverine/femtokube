@@ -152,7 +152,7 @@
             this.Controls.Add(this.labelNamespaceName);
             this.Name = "PodAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PodAdd";
+            this.Text = "Create Pod";
             this.Load += new System.EventHandler(this.PodAdd_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).EndInit();

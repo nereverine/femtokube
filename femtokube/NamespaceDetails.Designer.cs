@@ -130,7 +130,7 @@
             this.Controls.Add(this.labelNamespaceName);
             this.Name = "NamespaceDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NamespaceDetails";
+            this.Text = "Namespace Details";
             this.Load += new System.EventHandler(this.NamespaceDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

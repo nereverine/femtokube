@@ -36,16 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelTargetedPort = new System.Windows.Forms.Label();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelProtocol = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelPortName = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelClusterIp = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelPortName = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelProtocol = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelPort = new System.Windows.Forms.Label();
-            this.labelTargetedPort = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,82 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ports";
             // 
+            // labelTargetedPort
+            // 
+            this.labelTargetedPort.AutoSize = true;
+            this.labelTargetedPort.Location = new System.Drawing.Point(177, 76);
+            this.labelTargetedPort.Name = "labelTargetedPort";
+            this.labelTargetedPort.Size = new System.Drawing.Size(38, 15);
+            this.labelTargetedPort.TabIndex = 7;
+            this.labelTargetedPort.Text = "label9";
+            // 
+            // labelPort
+            // 
+            this.labelPort.AutoSize = true;
+            this.labelPort.Location = new System.Drawing.Point(43, 76);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(38, 15);
+            this.labelPort.TabIndex = 6;
+            this.labelPort.Text = "label9";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(87, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 15);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Targeted Port:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(10, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Port:";
+            // 
+            // labelProtocol
+            // 
+            this.labelProtocol.AutoSize = true;
+            this.labelProtocol.Location = new System.Drawing.Point(69, 45);
+            this.labelProtocol.Name = "labelProtocol";
+            this.labelProtocol.Size = new System.Drawing.Size(38, 15);
+            this.labelProtocol.TabIndex = 3;
+            this.labelProtocol.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(6, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Protocol:";
+            // 
+            // labelPortName
+            // 
+            this.labelPortName.AutoSize = true;
+            this.labelPortName.Location = new System.Drawing.Point(69, 19);
+            this.labelPortName.Name = "labelPortName";
+            this.labelPortName.Size = new System.Drawing.Size(38, 15);
+            this.labelPortName.TabIndex = 1;
+            this.labelPortName.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(6, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Name:";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -151,82 +227,6 @@
             this.labelClusterIp.TabIndex = 18;
             this.labelClusterIp.Text = "label5";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Name:";
-            // 
-            // labelPortName
-            // 
-            this.labelPortName.AutoSize = true;
-            this.labelPortName.Location = new System.Drawing.Point(69, 19);
-            this.labelPortName.Name = "labelPortName";
-            this.labelPortName.Size = new System.Drawing.Size(38, 15);
-            this.labelPortName.TabIndex = 1;
-            this.labelPortName.Text = "label6";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Protocol:";
-            // 
-            // labelProtocol
-            // 
-            this.labelProtocol.AutoSize = true;
-            this.labelProtocol.Location = new System.Drawing.Point(69, 45);
-            this.labelProtocol.Name = "labelProtocol";
-            this.labelProtocol.Size = new System.Drawing.Size(38, 15);
-            this.labelProtocol.TabIndex = 3;
-            this.labelProtocol.Text = "label7";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(10, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Port:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(87, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 15);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Targeted Port:";
-            // 
-            // labelPort
-            // 
-            this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(43, 76);
-            this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(38, 15);
-            this.labelPort.TabIndex = 6;
-            this.labelPort.Text = "label9";
-            // 
-            // labelTargetedPort
-            // 
-            this.labelTargetedPort.AutoSize = true;
-            this.labelTargetedPort.Location = new System.Drawing.Point(177, 76);
-            this.labelTargetedPort.Name = "labelTargetedPort";
-            this.labelTargetedPort.Size = new System.Drawing.Size(38, 15);
-            this.labelTargetedPort.TabIndex = 7;
-            this.labelTargetedPort.Text = "label9";
-            // 
             // ServiceDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -245,7 +245,7 @@
             this.Controls.Add(this.labelServiceName);
             this.Name = "ServiceDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ServiceDetails";
+            this.Text = "Service Details";
             this.Load += new System.EventHandler(this.ServiceDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

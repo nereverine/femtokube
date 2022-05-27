@@ -239,7 +239,7 @@
             this.Controls.Add(this.labelNamespaceName);
             this.Name = "ServiceAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ServiceAdd";
+            this.Text = "Create Service";
             this.Load += new System.EventHandler(this.ServiceAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
