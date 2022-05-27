@@ -14,9 +14,11 @@ namespace femtokube
 {
     public partial class Pods : Form
     {
-        public Pods()
+        private String address;
+        public Pods(String address)
         {
             InitializeComponent();
+            this.address = address;
         }
 
         private void Pods_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace femtokube
 
         private void getNamespaces()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/";
+            String url = address+"api/v1/namespaces/";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -58,7 +60,7 @@ namespace femtokube
         private void getPodsByNamespaceName()
         {
             listBoxPods.Items.Clear();
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/" + this.listBoxNamespaces.SelectedItem + "/pods";
+            String url =  address+"api/v1/namespaces/" + this.listBoxNamespaces.SelectedItem + "/pods";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -76,14 +78,14 @@ namespace femtokube
             }
             else
             {
-                var podDetails = new PodDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxPods.SelectedItem.ToString());
+                var podDetails = new PodDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxPods.SelectedItem.ToString(), address);
                 podDetails.Show();
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            var podAdd = new PodAdd(listBoxNamespaces.SelectedItem.ToString());
+            var podAdd = new PodAdd(listBoxNamespaces.SelectedItem.ToString(), address);
             podAdd.Show();
             
         }
@@ -99,8 +101,8 @@ namespace femtokube
             {
                 try
                 {
-                    String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/pods/" + listBoxPods.SelectedItem;
-                    WebRequest request = WebRequest.Create(address);
+                    String url = address+"api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/pods/" + listBoxPods.SelectedItem;
+                    WebRequest request = WebRequest.Create(url);
                     request.Method = "DELETE";
                     HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                     MessageBox.Show("Pod deleted successfully");

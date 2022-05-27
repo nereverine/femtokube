@@ -18,10 +18,12 @@ namespace femtokube
     {
         ArrayList nodeNames = new ArrayList();
         private int counter;
+        private String address;
 
-        public Nodes()
+        public Nodes(String address)
         {
             InitializeComponent();
+            this.address = address;
         }
 
         private void Nodes_Load(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace femtokube
 
         private void getNodes()
         {
-            String url = "http://192.168.50.128:8001/api/v1/nodes/";
+            String url = address+"api/v1/nodes/";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -40,6 +42,7 @@ namespace femtokube
                 listBoxNodes.Items.Add(item.metadata.name);
             }
         }
+       
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -64,7 +67,7 @@ namespace femtokube
             }
             else
             {
-                var nodeDetails = new NodeDetails(listBoxNodes.SelectedItem.ToString());
+                var nodeDetails = new NodeDetails(listBoxNodes.SelectedItem.ToString(), address);
                 nodeDetails.Show();
             }
         }

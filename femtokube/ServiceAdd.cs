@@ -15,10 +15,12 @@ namespace femtokube
     public partial class ServiceAdd : Form
     {
         private String namespaceName;
-        public ServiceAdd(String namespaceName)
+        private String address;
+        public ServiceAdd(String namespaceName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
+            this.address = address;
         }
 
         private void ServiceAdd_Load(object sender, EventArgs e)
@@ -43,12 +45,12 @@ namespace femtokube
             else
             {
                 String json = "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"name\":\""+ textBoxName.Text + "\"},\"spec\":{\"selector\":{\"app\":\""+ textBoxLabel.Text+ "\"},\"ports\":[{\"protocol\":\""+ comboBoxProtocol.Text +"\",\"port\":"+ numericUpDownPort.Value +",\"targetPort\":"+ numericUpDownTarPort.Value + "}]}}";
-                String address = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/services";
+                String url = address+"api/v1/namespaces/" + namespaceName + "/services";
                 var myWebClient = new WebClient();
 
                 try
                 {
-                    var response = myWebClient.UploadString(address, json);
+                    var response = myWebClient.UploadString(url, json);
                     dynamic convertObj = JObject.Parse(response);
                     MessageBox.Show("Service: " + textBoxName.Text + " created successfully");
                     this.Close();

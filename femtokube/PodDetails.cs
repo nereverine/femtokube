@@ -18,11 +18,13 @@ namespace femtokube
         private String podName;
         List<Conditions> conditions = new List<Conditions>();
         List<Containers> containers = new List<Containers>();
-        public PodDetails(String namespaceName, String podName)
+        private String address;
+        public PodDetails(String namespaceName, String podName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
             this.podName = podName;
+            this.address = address;
         }
 
         private void PodAdd_Load(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace femtokube
 
         private void loadDetails()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/pods/" + podName;
+            String url =  address + "api/v1/namespaces/" + namespaceName + "/pods/" + podName;
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);

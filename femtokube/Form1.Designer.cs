@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
+            this.labelAddress = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -318,11 +319,21 @@
             this.labelError.Text = "Couldnt retrieve metrics";
             this.labelError.Visible = false;
             // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(12, 9);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(38, 15);
+            this.labelAddress.TabIndex = 7;
+            this.labelAddress.Text = "label5";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 342);
+            this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox4);
@@ -372,5 +383,6 @@
         private Label label11;
         private Label label4;
         private Label labelError;
+        private Label labelAddress;
     }
 }

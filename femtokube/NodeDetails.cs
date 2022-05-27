@@ -20,18 +20,20 @@ namespace femtokube
         List<Conditions> conditions = new List<Conditions>();
         List<Addresses> addresses = new List<Addresses>();
         List<Images> images = new List<Images>();
-        public NodeDetails(String nodeName)
+        private String address;
+        public NodeDetails(String nodeName, String address)
         {
-            this.nodeName = nodeName;
             InitializeComponent();
+            this.nodeName = nodeName;
+            this.address = address;
         }
 
         private void NodeDetails_Load(object sender, EventArgs e)
         {
             labelNodeName.Text = nodeName;
-            String address = "http://192.168.50.128:8001/api/v1/nodes/" + nodeName;
+            String url = address+"api/v1/nodes/" + nodeName;
             var myWebClient = new WebClient();
-            var json = myWebClient.DownloadString(address);
+            var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
             //uid
             labeluid.Text = convertObj.metadata.uid;

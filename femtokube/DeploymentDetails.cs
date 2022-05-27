@@ -18,18 +18,19 @@ namespace femtokube
         private String deploymentName;
         private List<Containers> containers = new List<Containers>();
         private List<Conditions> conditions = new List<Conditions>();
-
-        public DeploymentDetails(String namespaceName, String deploymentName)
+        private String address;
+        public DeploymentDetails(String namespaceName, String deploymentName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
             this.deploymentName = deploymentName;
+            this.address = address;
         }
 
         private void DeploymentDetails_Load(object sender, EventArgs e)
         {
             labelDeploymentName.Text = deploymentName;
-            String url = "http://192.168.50.128:8001/apis/apps/v1/namespaces/"+namespaceName+"/deployments/"+deploymentName;
+            String url = address+"apis/apps/v1/namespaces/"+namespaceName+"/deployments/"+deploymentName;
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);

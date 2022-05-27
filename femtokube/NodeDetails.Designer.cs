@@ -625,6 +625,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelNodeName);
             this.Name = "NodeDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NodeDetails";
             this.Load += new System.EventHandler(this.NodeDetails_Load);
             this.groupBox1.ResumeLayout(false);

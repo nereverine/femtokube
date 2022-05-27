@@ -15,15 +15,17 @@ namespace femtokube
     public partial class Deployments : Form
     {
 
-        public Deployments()
+        private String address;
+        public Deployments(String address)
         {
             InitializeComponent();
+            this.address = address;
 
         }
 
         private void getNamespaces()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces";
+            String url = address+"api/v1/namespaces";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -53,7 +55,7 @@ namespace femtokube
 
         private void getDeploymentsByNamespaceName()
         {
-            String url = "http://192.168.50.128:8001/apis/apps/v1/namespaces/"+listBoxNamespaces.SelectedItem+"/deployments";
+            String url = address+"apis/apps/v1/namespaces/"+listBoxNamespaces.SelectedItem+"/deployments";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -72,7 +74,7 @@ namespace femtokube
         {
             if (listBoxDeployments.SelectedItem != null)
             {
-                var deploymentAdd = new DeploymentDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxDeployments.SelectedItem.ToString());
+                var deploymentAdd = new DeploymentDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxDeployments.SelectedItem.ToString(), address);
                 deploymentAdd.Show();
             }
             else
@@ -83,7 +85,7 @@ namespace femtokube
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            var deploymentAdd = new DeploymentAdd(listBoxNamespaces.SelectedItem.ToString());
+            var deploymentAdd = new DeploymentAdd(listBoxNamespaces.SelectedItem.ToString(), address);
             deploymentAdd.Show();
         }
 

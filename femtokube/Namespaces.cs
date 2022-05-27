@@ -14,9 +14,11 @@ namespace femtokube
 {
     public partial class Namespaces : Form
     {
-        public Namespaces()
+        private String address;
+        public Namespaces(String address)
         {
             InitializeComponent();
+            this.address = address;
         }
 
         private void Namespaces_Load(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace femtokube
 
         private void getNamespaces()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/";
+            String url = address+"api/v1/namespaces/";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -70,8 +72,8 @@ namespace femtokube
         private void deleteNamespace()
         {
             var progressBarForm = new ProgressBarForm();
-            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem;
-            WebRequest request = WebRequest.Create(address);
+            String url = address+"api/v1/namespaces/" + listBoxNamespaces.SelectedItem;
+            WebRequest request = WebRequest.Create(url);
             request.Method = "DELETE";
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the namespace: " + listBoxNamespaces.SelectedItem , "Delete Namespace", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)

@@ -16,11 +16,13 @@ namespace femtokube
     {
         private String namespaceName;
         private String serviceName;
-        public ServiceDetails(String namespaceName, String serviceName)
+        private String address;
+        public ServiceDetails(String namespaceName, String serviceName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
             this.serviceName = serviceName;
+            this.address = address;
         }
 
         private void ServiceDetails_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace femtokube
             //service
             labelServiceName.Text = serviceName;
             //created at
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/services/" + serviceName;
+            String url = address + "api/v1/namespaces/" + namespaceName + "/services/" + serviceName;
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);

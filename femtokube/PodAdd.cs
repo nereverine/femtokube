@@ -16,10 +16,12 @@ namespace femtokube
     public partial class PodAdd : Form
     {
         private String namespaceName;
-        public PodAdd(String namespaceName)
+        private String address;
+        public PodAdd(String namespaceName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
+            this.address = address;
         }
 
        
@@ -45,7 +47,7 @@ namespace femtokube
 
 
 
-                String address = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName + "/pods";
+                String url = address+"api/v1/namespaces/" + namespaceName + "/pods";
                 var myWebClient = new WebClient();
                 String imageName = "";              
                 switch (listBoxImages.SelectedIndex)
@@ -79,7 +81,7 @@ namespace femtokube
 
                 try
                 {
-                    var response = myWebClient.UploadString(address, json);
+                    var response = myWebClient.UploadString(url, json);
                 dynamic convertObj = JObject.Parse(response);
                 MessageBox.Show("Pod: "+textBoxName.Text + " created successfully");
                     this.Close();

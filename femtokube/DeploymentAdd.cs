@@ -15,10 +15,12 @@ namespace femtokube
     public partial class DeploymentAdd : Form
     {
         private String namespaceName;
-        public DeploymentAdd(String namespaceName)
+        private String address;
+        public DeploymentAdd(String namespaceName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
+            this.address = address;
         }
 
         private void DeploymentAdd_Load(object sender, EventArgs e)
@@ -69,12 +71,12 @@ namespace femtokube
                 }
 
                 String json = "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"name\":\""+ textBoxName.Text +"\",\"labels\":{\"app\":\"" + textBoxContainerName.Text + "\"}},\"spec\":{\"replicas\":"+ numericUpDown1.Value +",\"selector\":{\"matchLabels\":{\"app\":\"" + textBoxContainerName.Text + "\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"" + textBoxContainerName.Text +"\"}},\"spec\":{\"containers\":[{\"name\":\"" + textBoxContainerName.Text + "\",\"image\":\"" + imageName + "\",\"ports\":[{\"containerPort\":" + numericUpDownPort.Value+ "}]}]}}}}";
-                String address = "http://192.168.50.128:8001/apis/apps/v1/namespaces/" + namespaceName + "/deployments/";
+                String url = address+"apis/apps/v1/namespaces/" + namespaceName + "/deployments/";
                 var myWebClient = new WebClient();
 
                 try
                 {
-                    var response = myWebClient.UploadString(address, json);
+                    var response = myWebClient.UploadString(url, json);
                     dynamic convertObj = JObject.Parse(response);
                     MessageBox.Show("Deployment: " + textBoxName.Text + " created successfully");
                     this.Close();

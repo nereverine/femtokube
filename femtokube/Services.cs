@@ -15,9 +15,11 @@ namespace femtokube
    
     public partial class Services : Form
     {
-        public Services()
+        private String address;
+        public Services(String address)
         {
             InitializeComponent();
+            this.address = address;
         }
 
         private void Services_Load(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace femtokube
 
         private void getNamespaces()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces";
+            String url = address +"api/v1/namespaces";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -57,7 +59,7 @@ namespace femtokube
 
         private void getServicesByNamespaceName()
         {
-            String url = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/services";
+            String url = address+"api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/services";
             var myWebClient = new WebClient();
             var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
@@ -75,14 +77,14 @@ namespace femtokube
             }
             else
             {
-                var serviceDetails = new ServiceDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxServices.SelectedItem.ToString());
+                var serviceDetails = new ServiceDetails(listBoxNamespaces.SelectedItem.ToString(), listBoxServices.SelectedItem.ToString(), address);
                 serviceDetails.Show();
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            var serviceAdd = new ServiceAdd(listBoxNamespaces.SelectedItem.ToString());
+            var serviceAdd = new ServiceAdd(listBoxNamespaces.SelectedItem.ToString(), address);
             serviceAdd.Show();
         }
 
@@ -101,8 +103,8 @@ namespace femtokube
         private void deleteService()
         {
             var progressBarForm = new ProgressBarForm();
-            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/services/" + listBoxServices.SelectedItem;
-            WebRequest request = WebRequest.Create(address);
+            String url = address+"api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/services/" + listBoxServices.SelectedItem;
+            WebRequest request = WebRequest.Create(url);
             request.Method = "DELETE";
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the service: " + listBoxServices.SelectedItem, "Delete Service", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
