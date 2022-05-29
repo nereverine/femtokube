@@ -99,19 +99,28 @@ namespace femtokube
             }
             else
             {
-                try
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the Pod: " + listBoxNamespaces.SelectedItem, "Delete Pod", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    String url = address+"api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/pods/" + listBoxPods.SelectedItem;
+                    try
+                    {
+                        String url = address + "api/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/pods/" + listBoxPods.SelectedItem;
                     WebRequest request = WebRequest.Create(url);
                     request.Method = "DELETE";
                     HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                     MessageBox.Show("Pod deleted successfully");
                     getPodsByNamespaceName();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+
+                    }
                 }
-                catch (Exception ex)
+                else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show(ex.ToString());
-                    
+                    return;
                 }
             }
         }

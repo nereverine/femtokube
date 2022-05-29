@@ -98,7 +98,7 @@ namespace femtokube
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure?", "Delete Deployment", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Delete the Deployment: " + listBoxDeployments.SelectedItem, "Delete Deployment", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     try
@@ -107,7 +107,7 @@ namespace femtokube
                         WebRequest request = WebRequest.Create(address);
                         request.Method = "DELETE";
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                        MessageBox.Show("Pod deleted successfully");
+                        MessageBox.Show("Deployment deleted successfully");
 
                     }
                     catch (Exception ex)
