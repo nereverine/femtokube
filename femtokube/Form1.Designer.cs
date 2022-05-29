@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonServices = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelMemory2 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.labelCPU2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             this.labelMemory1.AutoSize = true;
             this.labelMemory1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMemory1.Location = new System.Drawing.Point(137, 64);
+            this.labelMemory1.Location = new System.Drawing.Point(127, 69);
             this.labelMemory1.Name = "labelMemory1";
             this.labelMemory1.Size = new System.Drawing.Size(63, 25);
             this.labelMemory1.TabIndex = 3;
@@ -165,7 +166,7 @@
             // 
             this.labelCPU1.AutoSize = true;
             this.labelCPU1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCPU1.Location = new System.Drawing.Point(137, 32);
+            this.labelCPU1.Location = new System.Drawing.Point(127, 32);
             this.labelCPU1.Name = "labelCPU1";
             this.labelCPU1.Size = new System.Drawing.Size(63, 25);
             this.labelCPU1.TabIndex = 2;
@@ -194,6 +195,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.labelMemory2);
+            this.groupBox3.Controls.Add(this.labelError);
             this.groupBox3.Controls.Add(this.labelCPU2);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
@@ -209,17 +211,28 @@
             // 
             this.labelMemory2.AutoSize = true;
             this.labelMemory2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMemory2.Location = new System.Drawing.Point(137, 64);
+            this.labelMemory2.Location = new System.Drawing.Point(126, 68);
             this.labelMemory2.Name = "labelMemory2";
             this.labelMemory2.Size = new System.Drawing.Size(63, 25);
             this.labelMemory2.TabIndex = 3;
             this.labelMemory2.Text = "label4";
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelError.Location = new System.Drawing.Point(-24, 38);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(234, 30);
+            this.labelError.TabIndex = 6;
+            this.labelError.Text = "Couldnt retrieve metrics";
+            this.labelError.Visible = false;
+            // 
             // labelCPU2
             // 
             this.labelCPU2.AutoSize = true;
             this.labelCPU2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCPU2.Location = new System.Drawing.Point(137, 32);
+            this.labelCPU2.Location = new System.Drawing.Point(126, 32);
             this.labelCPU2.Name = "labelCPU2";
             this.labelCPU2.Size = new System.Drawing.Size(63, 25);
             this.labelCPU2.TabIndex = 2;
@@ -263,7 +276,7 @@
             // 
             this.labelMemory3.AutoSize = true;
             this.labelMemory3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMemory3.Location = new System.Drawing.Point(137, 64);
+            this.labelMemory3.Location = new System.Drawing.Point(127, 69);
             this.labelMemory3.Name = "labelMemory3";
             this.labelMemory3.Size = new System.Drawing.Size(63, 25);
             this.labelMemory3.TabIndex = 3;
@@ -273,7 +286,7 @@
             // 
             this.labelCPU3.AutoSize = true;
             this.labelCPU3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCPU3.Location = new System.Drawing.Point(137, 32);
+            this.labelCPU3.Location = new System.Drawing.Point(127, 32);
             this.labelCPU3.Name = "labelCPU3";
             this.labelCPU3.Size = new System.Drawing.Size(63, 25);
             this.labelCPU3.TabIndex = 2;
@@ -308,17 +321,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Metrics for the first 3 nodes of the cluster";
             // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelError.Location = new System.Drawing.Point(285, 128);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(234, 30);
-            this.labelError.TabIndex = 6;
-            this.labelError.Text = "Couldnt retrieve metrics";
-            this.labelError.Visible = false;
-            // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
@@ -334,13 +336,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 342);
             this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.labelError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

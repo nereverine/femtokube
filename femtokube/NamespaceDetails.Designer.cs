@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NamespaceDetails));
             this.labelNamespaceName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labeluuid = new System.Windows.Forms.Label();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.labeluuid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelNamespaceName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NamespaceDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Namespace Details";

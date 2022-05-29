@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceAdd));
             this.labelNamespaceName = new System.Windows.Forms.Label();
             this.labelNamespace = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -237,6 +238,7 @@
             this.Controls.Add(this.labelNamespace);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelNamespaceName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ServiceAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Service";
