@@ -46,14 +46,14 @@ namespace femtokube
             }
             else
             {
-                var namespaceDetails = new NamespaceDetails(listBoxNamespaces.SelectedItem.ToString());
+                var namespaceDetails = new NamespaceDetails(listBoxNamespaces.SelectedItem.ToString(), address);
                 namespaceDetails.Show();
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            var namespaceAdd = new NamespaceAdd();
+            var namespaceAdd = new NamespaceAdd(address);
             namespaceAdd.Show();
         }
 

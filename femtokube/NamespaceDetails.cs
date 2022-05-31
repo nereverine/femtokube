@@ -15,18 +15,20 @@ namespace femtokube
     public partial class NamespaceDetails : Form
     {
         private String namespaceName;
-        public NamespaceDetails(String namespaceName)
+        private String address;
+        public NamespaceDetails(String namespaceName, String address)
         {
             InitializeComponent();
             this.namespaceName = namespaceName;
+            this.address = address;
         }
 
         private void NamespaceDetails_Load(object sender, EventArgs e)
         {
             labelNamespaceName.Text = namespaceName;
-            String address = "http://192.168.50.128:8001/api/v1/namespaces/" + namespaceName;
+            String url = address + "api/v1/namespaces/" + namespaceName;
             var myWebClient = new WebClient();
-            var json = myWebClient.DownloadString(address);
+            var json = myWebClient.DownloadString(url);
             dynamic convertObj = JObject.Parse(json);
 
             labeluuid.Text = convertObj.metadata.uid;

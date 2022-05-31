@@ -23,7 +23,7 @@ namespace femtokube
             try
             {
                 int counter = 0;
-                String url = address+"/apis/metrics.k8s.io/v1beta1/nodes/";
+                String url = address+"apis/metrics.k8s.io/v1beta1/nodes/";
                 var myWebClient = new WebClient();
                 var json = myWebClient.DownloadString(url);
                 dynamic convertObj = JObject.Parse(json); 
@@ -128,6 +128,11 @@ namespace femtokube
         {
             var services = new Services(address);
             services.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

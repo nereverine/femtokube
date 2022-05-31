@@ -157,7 +157,15 @@ namespace femtokube
             }
             foreach (var image in images)
             {
-                listBoxImages.Items.Add(image.names[1] +"  Tamanho: " + image.sizeBytes * 0.000001+"MB");
+                try
+                {
+                    listBoxImages.Items.Add(image.names[1] + "  Tamanho: " + image.sizeBytes * 0.000001 + "MB");
+                }
+                catch (Exception)
+                {
+                    listBoxImages.Items.Add(image.names[0] + "  Tamanho: " + image.sizeBytes * 0.000001 + "MB");
+                }
+                
             }
         }
 

@@ -98,6 +98,7 @@ namespace femtokube
             //ips
             labelHostIP.Text = convertObj.status.hostIP;
             labelPodIP.Text = convertObj.status.podIP;
+
             foreach (var ip in convertObj.status.podIPs)
             {
                 listBoxIPs.Items.Add(ip.ip);

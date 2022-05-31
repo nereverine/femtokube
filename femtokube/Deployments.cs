@@ -103,8 +103,8 @@ namespace femtokube
                 {
                     try
                     {
-                        String address = "http://192.168.50.128:8001/apis/apps/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/deployments/" + listBoxDeployments.SelectedItem;
-                        WebRequest request = WebRequest.Create(address);
+                        String url = address + "apis/apps/v1/namespaces/" + listBoxNamespaces.SelectedItem + "/deployments/" + listBoxDeployments.SelectedItem;
+                        WebRequest request = WebRequest.Create(url);
                         request.Method = "DELETE";
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                         MessageBox.Show("Deployment deleted successfully");
